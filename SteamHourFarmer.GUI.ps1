@@ -25,7 +25,6 @@ $SteamApiKey = $envVars['STEAM_API_KEY']
 $SteamId64   = $envVars['STEAM_ID64']
 $FarmerDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
-
 ### ------------------------
 
 function Get-OwnedGames {
@@ -52,7 +51,6 @@ function Load-EnvFile {
     return $env
 }
 
-
 function Save-EnvFile {
     param($envPath,$envObj)
     $lines = @()
@@ -61,7 +59,6 @@ function Save-EnvFile {
     }
     Set-Content -Path $envPath -Value $lines -Encoding UTF8
 }
-
 
 function Start-Farmer {
     param($workDir)
@@ -180,4 +177,5 @@ $btnStart.Add_Click({
 
 # Auto-load on open
 $form.Add_Shown({ $btnRefresh.PerformClick() })
+
 [void]$form.ShowDialog()
